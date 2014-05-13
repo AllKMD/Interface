@@ -62,18 +62,20 @@
             // panel1
             // 
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 24);
+            this.panel1.Location = new System.Drawing.Point(0, 30);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1026, 539);
+            this.panel1.Size = new System.Drawing.Size(1592, 649);
             this.panel1.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7850, 6);
+            this.label3.Location = new System.Drawing.Point(13651, 7);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 13);
+            this.label3.Size = new System.Drawing.Size(80, 17);
             this.label3.TabIndex = 23;
             this.label3.Text = "Stan konta:";
             // 
@@ -84,16 +86,17 @@
             this.narzędziaToolStripMenuItem,
             this.logowanieToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.MaximumSize = new System.Drawing.Size(290, 24);
+            this.menuStrip1.MaximumSize = new System.Drawing.Size(387, 30);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(290, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(387, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // komentarzeToolStripMenuItem
             // 
             this.komentarzeToolStripMenuItem.Name = "komentarzeToolStripMenuItem";
-            this.komentarzeToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.komentarzeToolStripMenuItem.Size = new System.Drawing.Size(78, 24);
             this.komentarzeToolStripMenuItem.Text = "Program";
             // 
             // narzędziaToolStripMenuItem
@@ -104,13 +107,13 @@
             this.wystawPrzedmiotToolStripMenuItem,
             this.zestawieniaToolStripMenuItem});
             this.narzędziaToolStripMenuItem.Name = "narzędziaToolStripMenuItem";
-            this.narzędziaToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
+            this.narzędziaToolStripMenuItem.Size = new System.Drawing.Size(88, 24);
             this.narzędziaToolStripMenuItem.Text = "Narzędzia";
             // 
             // komentarzeToolStripMenuItem1
             // 
             this.komentarzeToolStripMenuItem1.Name = "komentarzeToolStripMenuItem1";
-            this.komentarzeToolStripMenuItem1.Size = new System.Drawing.Size(172, 22);
+            this.komentarzeToolStripMenuItem1.Size = new System.Drawing.Size(201, 24);
             this.komentarzeToolStripMenuItem1.Text = "Komentarze";
             this.komentarzeToolStripMenuItem1.Click += new System.EventHandler(this.komentarzeToolStripMenuItem1_Click);
             // 
@@ -121,34 +124,34 @@
             this.sprzedaneToolStripMenuItem,
             this.niesprzedaneToolStripMenuItem});
             this.sprzedażToolStripMenuItem.Name = "sprzedażToolStripMenuItem";
-            this.sprzedażToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.sprzedażToolStripMenuItem.Size = new System.Drawing.Size(201, 24);
             this.sprzedażToolStripMenuItem.Text = "Moja Sprzedaż";
             // 
             // sprzedajeToolStripMenuItem
             // 
             this.sprzedajeToolStripMenuItem.Name = "sprzedajeToolStripMenuItem";
-            this.sprzedajeToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.sprzedajeToolStripMenuItem.Size = new System.Drawing.Size(169, 24);
             this.sprzedajeToolStripMenuItem.Text = "Sprzedaje";
             this.sprzedajeToolStripMenuItem.Click += new System.EventHandler(this.sprzedajeToolStripMenuItem_Click);
             // 
             // sprzedaneToolStripMenuItem
             // 
             this.sprzedaneToolStripMenuItem.Name = "sprzedaneToolStripMenuItem";
-            this.sprzedaneToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.sprzedaneToolStripMenuItem.Size = new System.Drawing.Size(169, 24);
             this.sprzedaneToolStripMenuItem.Text = "Sprzedane";
             this.sprzedaneToolStripMenuItem.Click += new System.EventHandler(this.sprzedaneToolStripMenuItem_Click);
             // 
             // niesprzedaneToolStripMenuItem
             // 
             this.niesprzedaneToolStripMenuItem.Name = "niesprzedaneToolStripMenuItem";
-            this.niesprzedaneToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.niesprzedaneToolStripMenuItem.Size = new System.Drawing.Size(169, 24);
             this.niesprzedaneToolStripMenuItem.Text = "Niesprzedane";
             this.niesprzedaneToolStripMenuItem.Click += new System.EventHandler(this.niesprzedaneToolStripMenuItem_Click);
             // 
             // wystawPrzedmiotToolStripMenuItem
             // 
             this.wystawPrzedmiotToolStripMenuItem.Name = "wystawPrzedmiotToolStripMenuItem";
-            this.wystawPrzedmiotToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.wystawPrzedmiotToolStripMenuItem.Size = new System.Drawing.Size(201, 24);
             this.wystawPrzedmiotToolStripMenuItem.Text = "Wystaw Przedmiot";
             this.wystawPrzedmiotToolStripMenuItem.Click += new System.EventHandler(this.wystawPrzedmiotToolStripMenuItem_Click);
             // 
@@ -158,27 +161,27 @@
             this.toolStripMenuItem2,
             this.toolStripMenuItem3});
             this.zestawieniaToolStripMenuItem.Name = "zestawieniaToolStripMenuItem";
-            this.zestawieniaToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.zestawieniaToolStripMenuItem.Size = new System.Drawing.Size(201, 24);
             this.zestawieniaToolStripMenuItem.Text = "Zestawienia";
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(164, 22);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(191, 24);
             this.toolStripMenuItem2.Text = "Po przedmiotach";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(164, 22);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(191, 24);
             this.toolStripMenuItem3.Text = "Po okresie czasu";
             this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
             // logowanieToolStripMenuItem
             // 
             this.logowanieToolStripMenuItem.Name = "logowanieToolStripMenuItem";
-            this.logowanieToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
+            this.logowanieToolStripMenuItem.Size = new System.Drawing.Size(76, 24);
             this.logowanieToolStripMenuItem.Text = "Wyloguj";
             this.logowanieToolStripMenuItem.Click += new System.EventHandler(this.logowanieToolStripMenuItem_Click);
             // 
@@ -187,9 +190,10 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(7654, 4);
+            this.label1.Location = new System.Drawing.Point(13389, 5);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 17);
+            this.label1.Size = new System.Drawing.Size(98, 20);
             this.label1.TabIndex = 18;
             this.label1.Text = "Uzytkownik:";
             // 
@@ -197,9 +201,10 @@
             // 
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(7918, 6);
+            this.label5.Location = new System.Drawing.Point(13741, 7);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(44, 13);
+            this.label5.Size = new System.Drawing.Size(59, 17);
             this.label5.TabIndex = 25;
             this.label5.Text = "-2000 zl";
             // 
@@ -207,9 +212,10 @@
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(7968, 6);
+            this.label4.Location = new System.Drawing.Point(13808, 7);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(91, 13);
+            this.label4.Size = new System.Drawing.Size(118, 17);
             this.label4.TabIndex = 24;
             this.label4.Text = "Stan konta PayU:";
             // 
@@ -218,9 +224,10 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(7742, 4);
+            this.label2.Location = new System.Drawing.Point(13507, 5);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 17);
+            this.label2.Size = new System.Drawing.Size(95, 20);
             this.label2.TabIndex = 19;
             this.label2.Text = "allegroUser";
             // 
@@ -228,9 +235,10 @@
             // 
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(8065, 6);
+            this.label6.Location = new System.Drawing.Point(13937, 7);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(43, 13);
+            this.label6.Size = new System.Drawing.Size(54, 17);
             this.label6.TabIndex = 26;
             this.label6.Text = "1500 zł";
             // 
@@ -251,18 +259,20 @@
             this.panel2.Controls.Add(this.label3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.MaximumSize = new System.Drawing.Size(0, 24);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
+            this.panel2.MaximumSize = new System.Drawing.Size(0, 30);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1026, 24);
+            this.panel2.Size = new System.Drawing.Size(1592, 30);
             this.panel2.TabIndex = 0;
             // 
             // label12
             // 
             this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(979, 8);
+            this.label12.Location = new System.Drawing.Point(4489, 10);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(43, 13);
+            this.label12.Size = new System.Drawing.Size(54, 17);
             this.label12.TabIndex = 32;
             this.label12.Text = "1500 zł";
             // 
@@ -270,9 +280,10 @@
             // 
             this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(891, 8);
+            this.label11.Location = new System.Drawing.Point(4372, 10);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(91, 13);
+            this.label11.Size = new System.Drawing.Size(118, 17);
             this.label11.TabIndex = 31;
             this.label11.Text = "Stan konta PayU:";
             // 
@@ -280,9 +291,10 @@
             // 
             this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(818, 8);
+            this.label10.Location = new System.Drawing.Point(4275, 10);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(44, 13);
+            this.label10.Size = new System.Drawing.Size(59, 17);
             this.label10.TabIndex = 30;
             this.label10.Text = "-2000 zl";
             // 
@@ -290,9 +302,10 @@
             // 
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(760, 8);
+            this.label9.Location = new System.Drawing.Point(4197, 10);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(62, 13);
+            this.label9.Size = new System.Drawing.Size(80, 17);
             this.label9.TabIndex = 29;
             this.label9.Text = "Stan konta:";
             // 
@@ -301,9 +314,10 @@
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label8.Location = new System.Drawing.Point(640, 6);
+            this.label8.Location = new System.Drawing.Point(4037, 7);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(81, 17);
+            this.label8.Size = new System.Drawing.Size(95, 20);
             this.label8.TabIndex = 28;
             this.label8.Text = "allegroUser";
             // 
@@ -312,21 +326,22 @@
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label7.Location = new System.Drawing.Point(563, 6);
+            this.label7.Location = new System.Drawing.Point(3935, 7);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(82, 17);
+            this.label7.Size = new System.Drawing.Size(98, 20);
             this.label7.TabIndex = 27;
             this.label7.Text = "Uzytkownik:";
             // 
             // mainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1026, 563);
+            this.ClientSize = new System.Drawing.Size(1592, 679);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.MinimumSize = new System.Drawing.Size(1027, 597);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MinimumSize = new System.Drawing.Size(1363, 724);
             this.Name = "mainForm";
             this.Text = "Proste Allegro";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.mainForm_FormClosed);

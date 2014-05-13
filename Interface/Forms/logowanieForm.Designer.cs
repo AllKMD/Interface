@@ -41,17 +41,21 @@
             // 
             // loginTextB
             // 
-            this.loginTextB.Location = new System.Drawing.Point(89, 89);
+            this.loginTextB.Location = new System.Drawing.Point(119, 110);
+            this.loginTextB.Margin = new System.Windows.Forms.Padding(4);
             this.loginTextB.Name = "loginTextB";
-            this.loginTextB.Size = new System.Drawing.Size(241, 20);
+            this.loginTextB.Size = new System.Drawing.Size(320, 22);
             this.loginTextB.TabIndex = 0;
+            this.loginTextB.Text = "6omen6";
             // 
             // hasloTextB
             // 
-            this.hasloTextB.Location = new System.Drawing.Point(89, 133);
+            this.hasloTextB.Location = new System.Drawing.Point(119, 164);
+            this.hasloTextB.Margin = new System.Windows.Forms.Padding(4);
             this.hasloTextB.Name = "hasloTextB";
-            this.hasloTextB.Size = new System.Drawing.Size(241, 20);
+            this.hasloTextB.Size = new System.Drawing.Size(320, 22);
             this.hasloTextB.TabIndex = 1;
+            this.hasloTextB.Text = "BieDronKa1";
             this.hasloTextB.UseSystemPasswordChar = true;
             this.hasloTextB.Enter += new System.EventHandler(this.hasloTextB_Enter);
             this.hasloTextB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.hasloTextB_KeyPress);
@@ -59,26 +63,29 @@
             // loginLabel
             // 
             this.loginLabel.AutoSize = true;
-            this.loginLabel.Location = new System.Drawing.Point(45, 92);
+            this.loginLabel.Location = new System.Drawing.Point(60, 113);
+            this.loginLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.loginLabel.Name = "loginLabel";
-            this.loginLabel.Size = new System.Drawing.Size(36, 13);
+            this.loginLabel.Size = new System.Drawing.Size(47, 17);
             this.loginLabel.TabIndex = 2;
             this.loginLabel.Text = "Login:";
             // 
             // hasloLabel
             // 
             this.hasloLabel.AutoSize = true;
-            this.hasloLabel.Location = new System.Drawing.Point(47, 136);
+            this.hasloLabel.Location = new System.Drawing.Point(63, 167);
+            this.hasloLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.hasloLabel.Name = "hasloLabel";
-            this.hasloLabel.Size = new System.Drawing.Size(39, 13);
+            this.hasloLabel.Size = new System.Drawing.Size(48, 17);
             this.hasloLabel.TabIndex = 3;
             this.hasloLabel.Text = "Hasło:";
             // 
             // logujButton
             // 
-            this.logujButton.Location = new System.Drawing.Point(89, 173);
+            this.logujButton.Location = new System.Drawing.Point(119, 213);
+            this.logujButton.Margin = new System.Windows.Forms.Padding(4);
             this.logujButton.Name = "logujButton";
-            this.logujButton.Size = new System.Drawing.Size(106, 28);
+            this.logujButton.Size = new System.Drawing.Size(141, 34);
             this.logujButton.TabIndex = 4;
             this.logujButton.Text = "Loguj";
             this.logujButton.UseVisualStyleBackColor = true;
@@ -86,9 +93,10 @@
             // 
             // wyjdzButton
             // 
-            this.wyjdzButton.Location = new System.Drawing.Point(224, 173);
+            this.wyjdzButton.Location = new System.Drawing.Point(299, 213);
+            this.wyjdzButton.Margin = new System.Windows.Forms.Padding(4);
             this.wyjdzButton.Name = "wyjdzButton";
-            this.wyjdzButton.Size = new System.Drawing.Size(106, 28);
+            this.wyjdzButton.Size = new System.Drawing.Size(141, 34);
             this.wyjdzButton.TabIndex = 5;
             this.wyjdzButton.Text = "Wyjdź";
             this.wyjdzButton.UseVisualStyleBackColor = true;
@@ -100,19 +108,20 @@
             this.imglogo.ErrorImage = ((System.Drawing.Image)(resources.GetObject("imglogo.ErrorImage")));
             this.imglogo.Image = ((System.Drawing.Image)(resources.GetObject("imglogo.Image")));
             this.imglogo.InitialImage = ((System.Drawing.Image)(resources.GetObject("imglogo.InitialImage")));
-            this.imglogo.Location = new System.Drawing.Point(113, 12);
-            this.imglogo.MaximumSize = new System.Drawing.Size(173, 58);
-            this.imglogo.MinimumSize = new System.Drawing.Size(173, 58);
+            this.imglogo.Location = new System.Drawing.Point(151, 15);
+            this.imglogo.Margin = new System.Windows.Forms.Padding(4);
+            this.imglogo.MaximumSize = new System.Drawing.Size(231, 71);
+            this.imglogo.MinimumSize = new System.Drawing.Size(231, 71);
             this.imglogo.Name = "imglogo";
-            this.imglogo.Size = new System.Drawing.Size(173, 58);
+            this.imglogo.Size = new System.Drawing.Size(231, 71);
             this.imglogo.TabIndex = 6;
             this.imglogo.TabStop = false;
             // 
             // loginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(382, 228);
+            this.ClientSize = new System.Drawing.Size(507, 272);
             this.Controls.Add(this.imglogo);
             this.Controls.Add(this.wyjdzButton);
             this.Controls.Add(this.logujButton);
@@ -120,9 +129,10 @@
             this.Controls.Add(this.loginLabel);
             this.Controls.Add(this.hasloTextB);
             this.Controls.Add(this.loginTextB);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(398, 266);
-            this.MinimumSize = new System.Drawing.Size(398, 204);
+            this.MaximumSize = new System.Drawing.Size(525, 317);
+            this.MinimumSize = new System.Drawing.Size(525, 241);
             this.Name = "loginForm";
             this.Text = "Logowanie";
             this.Enter += new System.EventHandler(this.loginForm_Enter);

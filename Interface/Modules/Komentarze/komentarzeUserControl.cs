@@ -14,26 +14,20 @@ using Interface._Classes;
 using Interface.webapi;
 
 using System.Threading;
-using Interface.Modules.Komentarze;
 
 namespace Interface
 {
     public partial class komentarzeUserControl : UserControl
     {
         Session sess;
-        List<MyFeedbackListStruct2> myReceivedFeedbacksList,myPostedFeedbackList;
-        List<WaitFeedbackStruct> myWaitingFeedbacksList;
-        List<myNotReceivedFeedback> myNotReceivedFeedbacksList;
-
+        MyFeedbackListStruct2[] myReceivedFeedbacks,myPostedFeedbackList;
+        WaitFeedbackStruct[] myWaitingFeedbacks;
         Users users=new Users();
-        FeedbackContainer feedbacks = new FeedbackContainer();
 
         public komentarzeUserControl(Session s)
         {
             InitializeComponent();
             this.sess = s;
-
-            
 
             //===================================INICJALIZACJA KOLUMN DLA DGV=====================================
             daneDGV.Columns.Add("Komu", "Komu");
@@ -52,11 +46,17 @@ namespace Interface
                 daneDGV.Columns[i].ReadOnly=true;
             }
             //=====================================================================================================
-            downloadFeedbacks();
 
-            //===========================WYPELNIANIE DGV DANYMI====================================================//
-            //OTRZYMANE=============================================================================================//
-            foreach (MyFeedbackListStruct2 stru in myReceivedFeedbacksList)
+            //===========================POBIERANIE KOMENTARZY + WYPELNIANIE DGV DANYMI============================
+            FeedbackContainer feedbacks = new FeedbackContainer();
+            feedbacks.getMyFeedbacks(sess);
+            feedbacks.getMyWaitingFeedbacks(sess);
+            myReceivedFeedbacks=feedbacks.MYRECIVEDFEEDBACKLIST;
+            myWaitingFeedbacks=feedbacks.MYWAITINGFEEDBACKS;
+            myPostedFeedbackList=feedbacks.MYPOSTEDFEEDBACKLIST;
+
+            //OTRZYMANE=============================================================================================
+            foreach (MyFeedbackListStruct2 stru in myReceivedFeedbacks)
             {
                 int index = daneDGV.Rows.Add();
 
@@ -83,7 +83,7 @@ namespace Interface
                 daneDGV.Rows[index].Visible = false;
             }
             //DO WYSTAWIENIA===================================================================================================
-            foreach(WaitFeedbackStruct stru in myWaitingFeedbacksList)
+            foreach(WaitFeedbackStruct stru in myWaitingFeedbacks)
             {
                 int index = daneDGV.Rows.Add();
 
@@ -91,9 +91,6 @@ namespace Interface
                 //daneDGV.Rows[index].Cells["Pokaż zwrotny"].Value =
                 daneDGV.Rows[index].Cells["Komu"].Value = users.getUserName(stru.fetouserid, sess);
                 daneDGV.Rows[index].Cells["filtr"].Value = filtr.do_wystawienia;
-
-
-                //infoBoxTB.Text += stru.feanscommenttype;
             }
             //WYSTAWIONE=======================================================================================================
             foreach(MyFeedbackListStruct2 stru in myPostedFeedbackList)
@@ -124,43 +121,17 @@ namespace Interface
 
             }
             //NIEOTRZYMANE====================================================================================================
-            foreach (myNotReceivedFeedback stru in myNotReceivedFeedbacksList)
-            {
-                int index = daneDGV.Rows.Add();
 
-                daneDGV.Rows[index].Cells["Od kogo"].Value = users.getUserName(Convert.ToInt32(stru.userId), sess);
-                daneDGV.Rows[index].Cells["Nr aukcji"].Value = stru.auctionId;
-                daneDGV.Rows[index].Cells["filtr"].Value = filtr.nieotrzymany;
-                daneDGV.Rows[index].Visible = false;
-            }
             //================================================================================================================
 
-            daneDGV.ClearSelection();
             statusKomentarzaCB_SelectedIndexChanged(this, new EventArgs());
             daneDGV.Focus();
         }
 
         private void wystawBT_Click(object sender, EventArgs e)
         {
-            DataGridViewSelectedRowCollection selectedRows;
-            selectedRows = daneDGV.SelectedRows;
-
-
-
-
-            //test czy wyrzuca i refreshuje=============
-            WaitFeedbackStruct t = new WaitFeedbackStruct();
-            t.feitemid = 1;
-            t.fetouserid = 1;
-            //t.feop = 2;//kupujacemu
-            t.feop = 1;//sprzedajcemu
-            myWaitingFeedbacksList.Add(t);
-            //koniec test sprawdzic  wczesniej===========
-
-            //if (selectedRows.Count!=0)
-            //{
             blankContainerForm f = new blankContainerForm();
-            wystawKomentarzControl c = new wystawKomentarzControl(myWaitingFeedbacksList, sess, f);//NIE MY WAITING TYLKO SELECTED!!!!!
+            wystawKomentarzControl c = new wystawKomentarzControl();
             c.parentControl = this;
             f.parentControl = this;
 
@@ -168,21 +139,12 @@ namespace Interface
 
             f.Controls.Add(c);
             f.Show();
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Wybierz aukcje do których chcesz wystawić komentarz.");
-            //}
-
-
-
         }
 
         private void uzyjSzablonuBT_Click(object sender, EventArgs e)
         {
             blankContainerForm f = new blankContainerForm();
-            SQLQueries q=new SQLQueries();
-            managerSzablonowControl c = new managerSzablonowControl(q.getUserid((sess.GETLOGIN)), myWaitingFeedbacksList,sess);//na sztywno pod testy!!!, musi przyjmowacNIE WAITING TYLKO SELECTED!!! 
+            managerSzablonowControl c = new managerSzablonowControl();
 
             c.parentControl = this;
             f.parentControl = this;
@@ -194,8 +156,6 @@ namespace Interface
 
         private void statusKomentarzaCB_SelectedIndexChanged(object sender, EventArgs e)
         {
-            daneDGV.ClearSelection();
-
             for (int i = 0; i < 7; i++)
             {
                 daneDGV.Columns[i].Visible = false;
@@ -218,11 +178,7 @@ namespace Interface
                             r.Visible = true;
                         }
                     }
-                    uzyjSzablonuBT.Enabled = true;
-                    wystawBT.Enabled = true;
-
                     break;
-                
                 case "Wystawione":
                     daneDGV.Columns["Komu"].Visible = true;
                     daneDGV.Columns["Typ"].Visible = true;
@@ -235,11 +191,7 @@ namespace Interface
                             r.Visible = true;
                         }
                     }
-                    uzyjSzablonuBT.Enabled = false;
-                    wystawBT.Enabled = false;
-
                     break;
-                
                 case "Otrzymane":
                     daneDGV.Columns["Od kogo"].Visible = true;
                     daneDGV.Columns["Typ"].Visible = true;
@@ -252,11 +204,7 @@ namespace Interface
                             r.Visible = true;
                         }
                     }
-                    uzyjSzablonuBT.Enabled = false;
-                    wystawBT.Enabled = false;
-
                     break;
-                
                 case "Nieotrzymane":
                     daneDGV.Columns["Od kogo"].Visible = true;
                     foreach (DataGridViewRow r in daneDGV.Rows)
@@ -266,88 +214,11 @@ namespace Interface
                             r.Visible = true;
                         }
                     }
-                    uzyjSzablonuBT.Enabled = false;
-                    wystawBT.Enabled = false;
-
                     break;
-
                 default:
-                    
                     break;
             }
             daneDGV.Focus();
         }
-
-        private void daneDGV_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            //SZCZEGOLY KOMENTARZA
-            filtr filter = (filtr)(daneDGV.Rows[e.RowIndex].Cells["filtr"].Value);
-            long auctionID = Convert.ToInt64(daneDGV.Rows[e.RowIndex].Cells["Nr aukcji"].Value);
-
-            feedbackDetailsControl con = new feedbackDetailsControl(filter,auctionID);
-            blankContainerForm form = new blankContainerForm();
-            form.parentControl = this;
-            form.Controls.Add(con);
-            form.Show();
-
-            this.Enabled = false;
-
-        }
-
-        private void daneDGV_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            this.wystawBT.Text = "Wystaw(" + Convert.ToString(daneDGV.SelectedRows.Count) + ')';
-
-            ////ZAZNACZANIE/ODZNACZANIE(bez ctrl)
-
-            //if (daneDGV.Rows[e.RowIndex].Selected == true)
-            //{
-            //    daneDGV.Rows[e.RowIndex].Selected = false;
-            //}
-            //else
-            //{
-            //    daneDGV.Rows[e.RowIndex].Selected = true;
-            //}
-        }
-
-
-
-
-        void downloadFeedbacks()//pobiera komentarze i zapuje do zmiennych
-        {
-            //POBIERANIE DANYCH
-            feedbacks.getMyFeedbacks(sess);
-            feedbacks.getMyWaitingFeedbacks(sess);
-            feedbacks.getMyNotReceivedFeedbackList();
-
-            //ZAPISYWANIE DO ZMIENNYCH
-            myReceivedFeedbacksList = feedbacks.MYRECIVEDFEEDBACKLIST;
-            myWaitingFeedbacksList = feedbacks.MYWAITINGFEEDBACKS;
-            myPostedFeedbackList = feedbacks.MYPOSTEDFEEDBACKLIST;
-            myNotReceivedFeedbacksList = feedbacks.MYNOTRECEIVEDFEEDBACKLIST;
-        }
-        void refreshDGVdoWystawienia()//odswieza(ze zmiennej globalnej myWaitingFeedbacks) dataGridView dla pol z filtrem Do wystawienia
-        {
-            this.daneDGV.Rows.Clear(); //czysci wszystkie
-
-            if (myWaitingFeedbacksList != null)
-            {
-                foreach (WaitFeedbackStruct stru in myWaitingFeedbacksList)
-                {
-                    int index = daneDGV.Rows.Add();
-
-                    daneDGV.Rows[index].Cells["Nr aukcji"].Value = stru.feitemid;
-                    //daneDGV.Rows[index].Cells["Pokaż zwrotny"].Value =
-                    daneDGV.Rows[index].Cells["Komu"].Value = users.getUserName(stru.fetouserid, sess);
-                    daneDGV.Rows[index].Cells["filtr"].Value = filtr.do_wystawienia;
-                }
-            }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            refreshDGVdoWystawienia();
-        }
-        //dorobic METODA ZMIENIAJACA SELECTED rows na liste do wystawienia
     }
 }

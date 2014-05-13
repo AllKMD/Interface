@@ -8,22 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-using Interface._Classes;
-
 namespace Interface.Modules.Komentarze
 {
     public partial class feedbackDetailsControl : UserControl
     {
-        UserControl parentControl;
-
-        public feedbackDetailsControl(filtr f, long auctId)
+        public feedbackDetailsControl()
         {
             InitializeComponent();
-
-            this.parentControl = parentControl;
-
         }
 
+        private void GroupBox_Enter(object sender, EventArgs e)
+        {
 
+        }
     }
 }

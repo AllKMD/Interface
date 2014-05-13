@@ -22,6 +22,10 @@ namespace Interface
     public partial class mainForm : Form
     {
         Session s;
+        Categories cat;
+
+
+
 
         //////MULTITHREAD====LADOWANIE KOMENTARZY
         //static void KomentarzeLoad()
@@ -30,12 +34,13 @@ namespace Interface
         //}
         //Thread t = new Thread(new ThreadStart(KomentarzeLoad));
 
-        public mainForm(Session s)
+        public mainForm(Session s,Categories cat)
         {
             InitializeComponent();
             panel1.Controls.Add(new sprzedajeUserControl());
             panel1.Controls[panel1.Controls.IndexOfKey("sprzedajeUserControl")].Dock = DockStyle.Fill;
-
+            
+            this.cat = cat;
             this.s = s;
         }
 
@@ -136,7 +141,7 @@ namespace Interface
                 }
             }
 
-            panel1.Controls.Add(new wystawianieUserControl());
+            panel1.Controls.Add(new wystawianieUserControl(this.cat));
             panel1.Controls[panel1.Controls.IndexOfKey("wystawianieUserControl")].Dock = DockStyle.Fill;
 
         }

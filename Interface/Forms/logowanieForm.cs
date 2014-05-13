@@ -9,16 +9,22 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using Interface.webapi;  // będziemy używać biblioteki webapi
-using kodMacka;
+using Interface;
 using System.Security.Cryptography;
 using Interface._Classes;
 
 
 namespace Interface
 {
+
     public partial class loginForm : Form
     {
+        AllegroWebApiService allegroService = new AllegroWebApiService();
+        private long verKey;
+        private string verString;
+        const string webAPIKey = "7dda4ce4";
         private Graphics g;
+        private Categories cat;
         private Session s;
 
         public loginForm()
@@ -30,25 +36,20 @@ namespace Interface
 
         private void button1_Click(object sender, EventArgs e)
         {
+
             s = new Session("7dda4ce4", 1);
-            try
+            s.login(loginTextB.Text, hasloTextB.Text);
+
+            if (s.SESSIONHANDLE != "")
             {
-                s.login(loginTextB.Text, hasloTextB.Text);
-                //sprawdza czy jest uzytkownik, jezezeli tak to daje do session, jak nie dodaje do bazy danych
+                cat = new Categories(allegroService, webAPIKey, out verKey, out verString);
+                //cat.CATSDATA = allegroService.doGetCatsData(228, 0, webAPIKey, out verKey, out verString);
+                ladowanieForm loadform = new ladowanieForm(s, this.cat);
+                loadform.Show();
+                this.Hide();
             }
-            catch (Exception ex)
-            {
 
-            }
-
-            //if (s.SESSIONHANDLE != "")
-            //{
-            //    ladowanieForm loadform = new ladowanieForm(s);
-            //    loadform.Show();
-            //    this.Close();
-            //}
-
-            //hasloTextB.Text = "";
+            hasloTextB.Text = "";
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -75,7 +76,9 @@ namespace Interface
 
                 if (s.SESSIONHANDLE != "")
                 {
-                    ladowanieForm loadform = new ladowanieForm(s);
+                    cat = new Categories(allegroService, webAPIKey, out verKey, out verString);
+                    //cat.CATSDATA = allegroService.doGetCatsData(1, 0, webAPIKey, out verKey, out verString);
+                    ladowanieForm loadform = new ladowanieForm(s,this.cat);
                     loadform.Show();
                     this.Hide();
                 }

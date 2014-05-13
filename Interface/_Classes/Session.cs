@@ -19,8 +19,6 @@ namespace Interface._Classes
         private long userId, serverTime, localVersion;
         private int countryId;
 
-        string LOGIN;
-
         //METODY
         public Session(string webAPIKey,int countryId)
         {
@@ -32,14 +30,15 @@ namespace Interface._Classes
             allegroService.doQuerySysStatus(3, countryId, webAPIKey, out localVersion);//pobieranie versionKey
         }
         public void login(string login,string password)
-        {
-            //szyfrowanie hasla
+        { 
+            
+            ////szyfrowanie hasla
             SHA256 sha = new SHA256Managed();
             byte[] byteArrayPassword = Encoding.ASCII.GetBytes(password);//konwersja na tablice bajtow
             byte[] passwordHash = sha.ComputeHash(byteArrayPassword);//produkcja haszu
             string encodedPassword = Convert.ToBase64String(passwordHash);//konwersja na string
 
-            //logowanie
+            ////logowanie
             try
             {
                 sessionHandle = allegroService.doLoginEnc(
@@ -50,16 +49,16 @@ namespace Interface._Classes
                     localVersion,
                     out userId,
                     out serverTime);
-                LOGIN = login;
             }
             catch
             {
                 sessionHandle = "";
             }
+            
             //DO TEST WEB API===============================================================================================================================================
-            //allegroService.doQuerySysStatus(3, countryId, webAPIKey, out localVersion);
+            //allegroService.doQuerySysStatus(3, 228, webAPIKey, out localVersion);
             //sessionHandle = allegroService.doLogin(login, password, 228, webAPIKey, localVersion, out userId, out serverTime);
-            ////==============================================================================================================================================================
+            //==============================================================================================================================================================
         }
 
         //WLASCIWOSCI
@@ -87,15 +86,5 @@ namespace Interface._Classes
             }
             set { }
         }
-        public string GETLOGIN
-        {
-            get
-            {
-                return this.LOGIN;
-            }
-            set { }
-        }
-
-
     }
 }

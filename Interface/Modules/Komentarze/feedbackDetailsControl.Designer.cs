@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
             this.label2 = new System.Windows.Forms.Label();
-            this.contentTB = new System.Windows.Forms.RichTextBox();
+            this.trescKomentarzaTB = new System.Windows.Forms.RichTextBox();
             this.GroupBox = new System.Windows.Forms.GroupBox();
-            this.typValueLabel = new System.Windows.Forms.Label();
-            this.dataValueLabel = new System.Windows.Forms.Label();
-            this.komuValueLabel = new System.Windows.Forms.Label();
-            this.ktoValueLabel = new System.Windows.Forms.Label();
-            this.numerAukcjiValueLabel = new System.Windows.Forms.LinkLabel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.GroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,22 +54,22 @@
             this.label2.Size = new System.Drawing.Size(0, 13);
             this.label2.TabIndex = 1;
             // 
-            // contentTB
+            // trescKomentarzaTB
             // 
-            this.contentTB.BackColor = System.Drawing.SystemColors.Menu;
-            this.contentTB.Location = new System.Drawing.Point(22, 239);
-            this.contentTB.Name = "contentTB";
-            this.contentTB.Size = new System.Drawing.Size(400, 111);
-            this.contentTB.TabIndex = 3;
-            this.contentTB.Text = "";
+            this.trescKomentarzaTB.BackColor = System.Drawing.SystemColors.Menu;
+            this.trescKomentarzaTB.Location = new System.Drawing.Point(22, 239);
+            this.trescKomentarzaTB.Name = "trescKomentarzaTB";
+            this.trescKomentarzaTB.Size = new System.Drawing.Size(400, 111);
+            this.trescKomentarzaTB.TabIndex = 3;
+            this.trescKomentarzaTB.Text = "";
             // 
             // GroupBox
             // 
-            this.GroupBox.Controls.Add(this.typValueLabel);
-            this.GroupBox.Controls.Add(this.dataValueLabel);
-            this.GroupBox.Controls.Add(this.komuValueLabel);
-            this.GroupBox.Controls.Add(this.ktoValueLabel);
-            this.GroupBox.Controls.Add(this.numerAukcjiValueLabel);
+            this.GroupBox.Controls.Add(this.label12);
+            this.GroupBox.Controls.Add(this.label11);
+            this.GroupBox.Controls.Add(this.label10);
+            this.GroupBox.Controls.Add(this.label9);
+            this.GroupBox.Controls.Add(this.linkLabel1);
             this.GroupBox.Controls.Add(this.label7);
             this.GroupBox.Controls.Add(this.label6);
             this.GroupBox.Controls.Add(this.label5);
@@ -80,102 +80,7 @@
             this.GroupBox.Size = new System.Drawing.Size(400, 144);
             this.GroupBox.TabIndex = 4;
             this.GroupBox.TabStop = false;
-            // 
-            // typValueLabel
-            // 
-            this.typValueLabel.AutoSize = true;
-            this.typValueLabel.Location = new System.Drawing.Point(40, 91);
-            this.typValueLabel.Name = "typValueLabel";
-            this.typValueLabel.Size = new System.Drawing.Size(41, 13);
-            this.typValueLabel.TabIndex = 9;
-            this.typValueLabel.Text = "label12";
-            // 
-            // dataValueLabel
-            // 
-            this.dataValueLabel.AutoSize = true;
-            this.dataValueLabel.Location = new System.Drawing.Point(45, 65);
-            this.dataValueLabel.Name = "dataValueLabel";
-            this.dataValueLabel.Size = new System.Drawing.Size(41, 13);
-            this.dataValueLabel.TabIndex = 8;
-            this.dataValueLabel.Text = "label11";
-            // 
-            // komuValueLabel
-            // 
-            this.komuValueLabel.AutoSize = true;
-            this.komuValueLabel.Location = new System.Drawing.Point(49, 39);
-            this.komuValueLabel.Name = "komuValueLabel";
-            this.komuValueLabel.Size = new System.Drawing.Size(41, 13);
-            this.komuValueLabel.TabIndex = 7;
-            this.komuValueLabel.Text = "label10";
-            // 
-            // ktoValueLabel
-            // 
-            this.ktoValueLabel.AutoSize = true;
-            this.ktoValueLabel.Location = new System.Drawing.Point(38, 16);
-            this.ktoValueLabel.Name = "ktoValueLabel";
-            this.ktoValueLabel.Size = new System.Drawing.Size(35, 13);
-            this.ktoValueLabel.TabIndex = 6;
-            this.ktoValueLabel.Text = "label9";
-            // 
-            // numerAukcjiValueLabel
-            // 
-            this.numerAukcjiValueLabel.AutoSize = true;
-            this.numerAukcjiValueLabel.Location = new System.Drawing.Point(97, 115);
-            this.numerAukcjiValueLabel.Name = "numerAukcjiValueLabel";
-            this.numerAukcjiValueLabel.Size = new System.Drawing.Size(55, 13);
-            this.numerAukcjiValueLabel.TabIndex = 5;
-            this.numerAukcjiValueLabel.TabStop = true;
-            this.numerAukcjiValueLabel.Text = "linkLabel1";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label7.Location = new System.Drawing.Point(6, 115);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(85, 13);
-            this.label7.TabIndex = 4;
-            this.label7.Text = "Numer aukcji:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label6.Location = new System.Drawing.Point(6, 91);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(32, 13);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "Typ:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label5.Location = new System.Drawing.Point(6, 65);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(38, 13);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Data:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(6, 39);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(42, 13);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Komu:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(6, 16);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(30, 13);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Kto:";
+            this.GroupBox.Enter += new System.EventHandler(this.GroupBox_Enter);
             // 
             // label1
             // 
@@ -187,6 +92,56 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Szczegóły komentarza";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label3.Location = new System.Drawing.Point(6, 16);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(30, 13);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Kto:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label4.Location = new System.Drawing.Point(6, 39);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(42, 13);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Komu:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label5.Location = new System.Drawing.Point(6, 65);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(38, 13);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Data:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label6.Location = new System.Drawing.Point(6, 91);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(32, 13);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Typ:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label7.Location = new System.Drawing.Point(6, 115);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(85, 13);
+            this.label7.TabIndex = 4;
+            this.label7.Text = "Numer aukcji:";
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -197,6 +152,52 @@
             this.label8.TabIndex = 6;
             this.label8.Text = "Treść";
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(97, 115);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(55, 13);
+            this.linkLabel1.TabIndex = 5;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "linkLabel1";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(38, 16);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(35, 13);
+            this.label9.TabIndex = 6;
+            this.label9.Text = "label9";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(49, 39);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(41, 13);
+            this.label10.TabIndex = 7;
+            this.label10.Text = "label10";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(45, 65);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(41, 13);
+            this.label11.TabIndex = 8;
+            this.label11.Text = "label11";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(40, 91);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(41, 13);
+            this.label12.TabIndex = 9;
+            this.label12.Text = "label12";
+            // 
             // feedbackDetailsControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -204,7 +205,7 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.GroupBox);
-            this.Controls.Add(this.contentTB);
+            this.Controls.Add(this.trescKomentarzaTB);
             this.Controls.Add(this.label2);
             this.Name = "feedbackDetailsControl";
             this.Size = new System.Drawing.Size(444, 382);
@@ -218,7 +219,7 @@
         #endregion
 
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.RichTextBox contentTB;
+        private System.Windows.Forms.RichTextBox trescKomentarzaTB;
         private System.Windows.Forms.GroupBox GroupBox;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -227,10 +228,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label typValueLabel;
-        private System.Windows.Forms.Label dataValueLabel;
-        private System.Windows.Forms.Label komuValueLabel;
-        private System.Windows.Forms.Label ktoValueLabel;
-        private System.Windows.Forms.LinkLabel numerAukcjiValueLabel;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }

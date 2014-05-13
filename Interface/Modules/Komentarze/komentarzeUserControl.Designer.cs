@@ -49,7 +49,6 @@
             this.neutralneLB = new System.Windows.Forms.Label();
             this.daneContainerPanel = new System.Windows.Forms.Panel();
             this.daneDGV = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
             this.topContainerPanel.SuspendLayout();
             this.innerMidPanel.SuspendLayout();
             this.innerTopRightPanel.SuspendLayout();
@@ -97,7 +96,6 @@
             // 
             // innerTopRightPanel
             // 
-            this.innerTopRightPanel.Controls.Add(this.button1);
             this.innerTopRightPanel.Controls.Add(this.logoPB);
             this.innerTopRightPanel.Controls.Add(this.filtrCB);
             this.innerTopRightPanel.Controls.Add(this.statusKomentarzaLB);
@@ -147,7 +145,6 @@
             // wystawBT
             // 
             this.wystawBT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.wystawBT.Enabled = false;
             this.wystawBT.Location = new System.Drawing.Point(12, 194);
             this.wystawBT.Name = "wystawBT";
             this.wystawBT.Size = new System.Drawing.Size(97, 21);
@@ -159,7 +156,6 @@
             // uzyjSzablonuBT
             // 
             this.uzyjSzablonuBT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.uzyjSzablonuBT.Enabled = false;
             this.uzyjSzablonuBT.Location = new System.Drawing.Point(115, 194);
             this.uzyjSzablonuBT.Name = "uzyjSzablonuBT";
             this.uzyjSzablonuBT.Size = new System.Drawing.Size(97, 21);
@@ -298,18 +294,6 @@
             this.daneDGV.Size = new System.Drawing.Size(1279, 386);
             this.daneDGV.StandardTab = true;
             this.daneDGV.TabIndex = 31;
-            this.daneDGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.daneDGV_CellClick);
-            this.daneDGV.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.daneDGV_CellMouseDoubleClick);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(12, 165);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 61;
-            this.button1.Text = "REFRESH";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // komentarzeUserControl
             // 
@@ -356,6 +340,5 @@
         private System.Windows.Forms.Button wystawBT;
         private System.Windows.Forms.Button uzyjSzablonuBT;
         private System.Windows.Forms.PictureBox logoPB;
-        private System.Windows.Forms.Button button1;
     }
 }

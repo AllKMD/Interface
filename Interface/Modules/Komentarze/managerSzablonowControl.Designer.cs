@@ -124,6 +124,7 @@
             this.Controls.Add(this.uzyjBT);
             this.Name = "managerSzablonowControl";
             this.Size = new System.Drawing.Size(539, 250);
+            this.Load += new System.EventHandler(this.managerSzablonowControl_Load);
             this.ResumeLayout(false);
 
         }
